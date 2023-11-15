@@ -1,10 +1,10 @@
 {
   "name": "nestjs-ws-game-server",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "NestJS + WS(socket.io) + Game Server",
+  "author": "LEE GUN HO(fiadot@gmail.com)",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "commercial",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -22,8 +22,10 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.2.8",
+    "@nestjs/config": "^3.1.1",
     "@nestjs/core": "^10.2.8",
     "@nestjs/platform-express": "^10.2.8",
+    "joi": "^17.11.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
