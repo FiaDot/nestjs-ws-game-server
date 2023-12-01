@@ -149,7 +149,7 @@ export class ChatGateway {
     this.logger.log(`[message] client.id=${client.id},payload=${payload}`);
     this.logger.log(`[message] client.id=${client.id},msg=${payload?.data}`);
 
-    this.server.emit('unity', JSON.stringify({ data: 'echo' })); // 클라 처리 못함
+    // this.server.emit('unity', JSON.stringify({ data: 'echo' })); // 클라 처리 못함
     this.server.emit('unity', { data: 'echo2' }); // 성공
     this.server.emit('unity', payload); // 성공
   }
