@@ -142,14 +142,16 @@ export class ChatGateway {
 
   @SubscribeMessage('unity')
   // handleMessage(client: Socket, payload: any): void {
-  handleUnity(client: Socket, payload): void {
-    const enc = JSON.parse(payload);
-
+  handleUnity(client: Socket, payload: { data: string }): void {
+    // const enc = JSON.parse(payload);
     // this.server.emit('unity', JSON.stringify(enc)); // ["{\"data\":\"unity dedi\"}"]
-    this.server.emit('unity', enc); // [{"data":"unity dedi"}]
 
     this.logger.log(`[message] client.id=${client.id},payload=${payload}`);
-    this.logger.log(`[message] client.id=${client.id},msg=${enc?.data}`);
+    this.logger.log(`[message] client.id=${client.id},msg=${payload?.data}`);
+
+    this.server.emit('unity', JSON.stringify({ data: 'echo' })); // 클라 처리 못함
+    this.server.emit('unity', { data: 'echo2' }); // 성공
+    this.server.emit('unity', payload); // 성공
   }
 
   // TODO : room management
