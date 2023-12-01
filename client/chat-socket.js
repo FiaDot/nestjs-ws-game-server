@@ -4,6 +4,8 @@ const message = document.getElementById('message');
 const messages = document.getElementById('messages');
 
 const handleSubmitNewMessage = () => {
+  console.log({ data: message.value });
+
   socket.emit('message', { data: message.value }); // 클라이언트에서 서버로 이벤트를 발생시킨다
 };
 
